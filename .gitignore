@@ -1,5 +1,6 @@
 # Claude Code config and skills (local only, not for GitHub)
 CLAUDE.md
+workflow-cheatsheet.md
 .claude/
 .claude-plugin/
  
