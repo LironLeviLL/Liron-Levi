@@ -1,0 +1,15 @@
+# Claude Code config and skills (local only, not for GitHub)
+CLAUDE.md
+.claude/
+.claude-plugin/
+ 
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+ 
+# Editor files
+.vscode/
+*.swp
+*.swo
+ 
