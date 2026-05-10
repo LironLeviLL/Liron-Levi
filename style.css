@@ -61,16 +61,16 @@
   --profile-border-width: 3px;
 
   /* Resume page additions */
-  --color-bg-cream: #F4EFE6;
-  --color-bg-cream-soft: #ECE4D5;
-  --color-bg-dark: #2B2520;
-  --color-bg-dark-soft: #3A322B;
-  --color-text-dark: #1A1A1A;
-  --color-text-muted-dark: #6B5D52;
-  --color-gold-soft: #B8956A;
-  --decorative-line: rgba(184, 149, 106, 0.25);
-  --r-shadow-soft: 0 8px 24px rgba(43, 37, 32, 0.08);
-  --r-shadow-hover: 0 14px 32px rgba(43, 37, 32, 0.14);
+  --color-bg-cream: #F8F4ED;
+  --color-bg-cream-soft: #EFE5D2;
+  --color-bg-dark: #5A1A22;
+  --color-bg-dark-soft: #722F37;
+  --color-text-dark: #2D1418;
+  --color-text-muted-dark: #6B4148;
+  --color-gold-soft: #C9A24A;
+  --decorative-line: rgba(114, 47, 55, 0.18);
+  --r-shadow-soft: 0 8px 24px rgba(45, 20, 24, 0.08);
+  --r-shadow-hover: 0 14px 32px rgba(45, 20, 24, 0.14);
   --r-ticker-duration: 30s;
 }
 
@@ -260,6 +260,35 @@ ul {
   flex-grow: 1;
 }
 
+/* === Coming Soon button variant === */
+.link-btn--soon {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.link-btn--soon:hover {
+  transform: none;
+  background: var(--glass-bg);
+  box-shadow: var(--glass-shadow);
+}
+
+.link-btn--soon .label {
+  flex-grow: 0;
+}
+
+.soon-badge {
+  margin-inline-start: auto;
+  padding: 0.25rem 0.7rem;
+  font-size: 0.75rem;
+  font-weight: var(--font-weight-bold);
+  background: var(--color-accent);
+  color: var(--color-primary-dark);
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
 /* =========================================================
    RESUME PAGE
    Cream + dark-brown world, separate from landing pages.
@@ -275,67 +304,70 @@ ul {
 }
 .r-page a { color: inherit; }
 
-/* --- Resume language switcher (positioned in hero) ---- */
+/* --- Resume language switcher (flex item inside .r-hero__top-right) ---- */
 .r-lang-switcher {
-  position: absolute;
-  top: var(--space-md);
-  inset-inline-end: var(--space-md);
   display: inline-flex;
   align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-xs) var(--space-sm);
-  border-radius: var(--radius-lg);
-  background: rgba(255, 255, 255, 0.6);
-  border: 1px solid var(--decorative-line);
-  font-size: var(--font-size-sm);
-  z-index: 3;
+  gap: 0.4rem;
+  margin: 0;
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
 }
 .r-lang-switcher a {
-  color: var(--color-text-muted-dark);
-  text-decoration: none;
-  padding: 0 var(--space-xs);
+  padding: 0.3rem 0.5rem;
+  min-width: 32px;
   min-height: 32px;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted-dark);
+  text-decoration: none;
+  border-radius: 4px;
   transition: color var(--transition-fast);
 }
 .r-lang-switcher a:hover,
 .r-lang-switcher a:focus-visible { color: var(--color-text-dark); }
-.r-lang-switcher a.active { color: var(--color-text-dark); font-weight: var(--font-weight-bold); }
-.r-lang-switcher .separator { color: var(--decorative-line); user-select: none; }
+.r-lang-switcher a.active {
+  color: var(--color-text-dark);
+  font-weight: var(--font-weight-bold);
+}
+.r-lang-switcher .separator {
+  color: var(--color-text-muted-dark);
+  user-select: none;
+}
 
-/* --- Resume back button -------------------------------- */
+/* --- Resume back button (flex item inside .r-hero__top-right) ---- */
 .r-back-btn {
-  position: absolute;
-  top: calc(var(--space-md) + 3.25rem);
-  inset-inline-end: var(--space-md);
   display: inline-flex;
   align-items: center;
-  gap: var(--space-xs);
-  padding: var(--space-sm) var(--space-md);
-  min-height: 48px;
-  border-radius: var(--radius-lg);
+  gap: 0.4rem;
+  padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.7rem, 2vw, 1rem);
+  min-height: 40px;
   background: rgba(255, 255, 255, 0.6);
-  border: 1px solid var(--decorative-line);
+  border: 1px solid var(--color-gold-soft);
+  border-radius: 999px;
   color: var(--color-text-dark);
   text-decoration: none;
-  font-size: var(--font-size-sm);
-  z-index: 3;
-  transition: background var(--transition-fast);
+  font-size: clamp(0.75rem, 2vw, 0.9rem);
+  white-space: nowrap;
+  transition: background var(--transition-fast), transform var(--transition-fast);
 }
-.r-back-btn:hover { background: rgba(255, 255, 255, 0.85); }
+.r-back-btn:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
 .r-back-btn:focus-visible {
   outline: 2px solid var(--color-gold-soft);
   outline-offset: 2px;
 }
 .r-back-btn .icon {
-  width: 18px;
-  height: 18px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
-.r-back-btn .icon svg { width: 100%; height: 100%; }
+.r-back-btn .icon svg {
+  width: clamp(14px, 3vw, 18px);
+  height: clamp(14px, 3vw, 18px);
+}
 [dir="rtl"] .r-back-btn .icon { transform: scaleX(-1); }
 
 /* --- Decorative drifting circles (hero/tabs/gallery) -- */
@@ -368,7 +400,7 @@ ul {
 .r-hero {
   position: relative;
   background: var(--color-bg-cream);
-  padding: clamp(4rem, 10vw, 7rem) var(--container-padding) var(--space-2xl);
+  padding: clamp(5rem, 12vw, 7rem) clamp(1rem, 4vw, 2rem) var(--space-2xl);
   text-align: center;
   isolation: isolate;
 }
@@ -376,21 +408,28 @@ ul {
 .r-hero > .r-bg-circles { z-index: 0; }
 .r-hero__agency {
   position: absolute;
-  top: var(--space-md);
-  inset-inline-start: 50%;
-  transform: translateX(-50%);
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted-dark);
-  letter-spacing: 0.08em;
+  top: clamp(1rem, 3vw, 1.5rem);
+  left: clamp(1rem, 3vw, 1.5rem);
+  z-index: 10;
+  font-size: clamp(0.65rem, 1.8vw, 0.8rem);
+  letter-spacing: 0.05em;
   text-transform: uppercase;
-  z-index: 2;
-  white-space: nowrap;
+  color: var(--color-text-muted-dark);
+  max-width: 45%;
+  line-height: 1.3;
+  text-align: start;
 }
-@media (min-width: 768px) {
-  .r-hero__agency {
-    inset-inline-start: var(--space-md);
-    transform: none;
-  }
+
+/* Top-right cluster: back button + language switcher pinned to physical right corner */
+.r-hero__top-right {
+  position: absolute;
+  top: clamp(1rem, 3vw, 1.5rem);
+  right: clamp(1rem, 3vw, 1.5rem);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.5rem, 2vw, 1rem);
+  flex-wrap: nowrap;
 }
 .r-hero__name {
   font-size: clamp(2.5rem, 9vw, 5.5rem);
@@ -708,17 +747,18 @@ ul {
   padding: var(--space-md) var(--space-lg);
   min-height: 64px;
   border-radius: var(--radius-md);
-  background: var(--color-gold-soft);
+  background: var(--color-primary);
+  border: 1.5px solid var(--color-gold-soft);
   color: #fff;
   text-decoration: none;
   text-align: start;
-  transition: filter var(--transition-fast);
+  transition: background var(--transition-fast);
 }
-.r-connect__btn:hover { filter: brightness(1.06); }
+.r-connect__btn:hover { background: var(--color-primary-light); }
 .r-connect__btn:focus-visible { outline: 2px solid var(--color-text-dark); outline-offset: 2px; }
 .r-connect__btn svg { flex-shrink: 0; width: 24px; height: 24px; }
 .r-connect__btn-text { display: flex; flex-direction: column; line-height: 1.2; }
-.r-connect__btn-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; opacity: 0.9; }
+.r-connect__btn-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold-soft); }
 .r-connect__btn-value { font-weight: var(--font-weight-bold); }
 .r-connect__btn--ig {
   background: transparent;
@@ -771,10 +811,38 @@ ul {
 
 /* --- Mobile tightening -------------------------------- */
 @media (max-width: 480px) {
-  .r-hero__name { letter-spacing: 0.02em; }
+  .r-hero__name { letter-spacing: 0.02em; font-size: clamp(2rem, 11vw, 3rem); }
+  .r-hero__subtitle { font-size: 0.75rem; }
   .r-tabs__list { gap: var(--space-sm); }
   .r-tabs__label { font-size: var(--font-size-sm); padding: var(--space-xs) var(--space-sm); }
   .r-connect__btn { width: 100%; }
+
+  .r-hero { padding-top: 5.5rem; }
+
+  .r-hero__agency {
+    font-size: 0.6rem;
+    max-width: 40%;
+    line-height: 1.25;
+  }
+
+  .r-hero__top-right { gap: 0.4rem; }
+
+  .r-back-btn {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.7rem;
+    min-height: 36px;
+  }
+  .r-back-btn .icon svg { width: 12px; height: 12px; }
+
+  .r-lang-switcher { font-size: 0.7rem; gap: 0.25rem; }
+  .r-lang-switcher a { padding: 0.25rem 0.35rem; min-width: 28px; min-height: 28px; }
+}
+
+@media (max-width: 360px) {
+  .r-hero__agency {
+    font-size: 0.55rem;
+    max-width: 38%;
+  }
 }
 
 /* === Footer === */
