@@ -18,6 +18,14 @@
 </head>
 <body>
 
+  <div class="bg-decor" aria-hidden="true">
+    <span class="bg-orb bg-orb--1"></span>
+    <span class="bg-orb bg-orb--2"></span>
+    <span class="bg-orb bg-orb--3"></span>
+    <span class="bg-orb bg-orb--4"></span>
+    <span class="bg-orb bg-orb--5"></span>
+  </div>
+
   <main class="container">
 
     <!-- Language Switcher -->
@@ -33,18 +41,18 @@
 
     <!-- Profile -->
     <section class="profile">
-      <div class="profile-circle" aria-hidden="true">
-        <span class="initials">LL</span>
+      <div class="profile-circle">
+        <img class="profile-image" src="photos/profile-main.jpg" alt="ليرون ليفي" width="120" height="120">
       </div>
       <h1 class="profile-name">ليرون ليفي</h1>
-      <p class="profile-bio">مستشارة جمال وعافية</p>
+      <p class="profile-bio">سعيدة بزيارتكم 😉❤️</p>
     </section>
 
     <!-- Link Buttons -->
     <div class="links">
 
-      <!-- Resume -->
-      <a href="resume.html" class="link-btn" aria-label="عرض السيرة الذاتية">
+      <!-- 1. Acting Resume -->
+      <a href="resume.html" class="link-btn" aria-label="عرض السيرة الذاتية للتمثيل">
         <span class="icon" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
@@ -53,11 +61,22 @@
             <line x1="16" y1="17" x2="8" y2="17"/>
           </svg>
         </span>
-        <span class="label">السيرة الذاتية</span>
+        <span class="label">السيرة الذاتية للتمثيل</span>
       </a>
 
-      <!-- Instagram -->
-      <a href="#" class="link-btn link-btn--soon" aria-label="زيارة حساب انستغرام" aria-disabled="true">
+      <!-- 2. TikTok (Coming Soon) -->
+      <div class="link-btn link-btn--soon">
+        <span class="icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
+          </svg>
+        </span>
+        <span class="label">تيك توك</span>
+        <span class="soon-badge">قريباً!</span>
+      </div>
+
+      <!-- 3. Instagram -->
+      <a href="https://www.instagram.com/liron.levi.369?igsh=MTNvN3FhbHY1dnd5ZQ==" target="_blank" rel="noopener noreferrer" class="link-btn" aria-label="زيارة حساب انستغرام">
         <span class="icon" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
@@ -66,50 +85,38 @@
           </svg>
         </span>
         <span class="label">انستغرام</span>
-        <span class="soon-badge">قريباً!</span>
       </a>
 
-      <!-- TikTok -->
-      <a href="#" class="link-btn link-btn--soon" aria-label="زيارة حساب تيك توك" aria-disabled="true">
-        <span class="icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/>
-          </svg>
-        </span>
-        <span class="label">تيك توك</span>
-        <span class="soon-badge">قريباً!</span>
-      </a>
-
-      <!-- Facebook -->
-      <a href="#" class="link-btn link-btn--soon" aria-label="زيارة حساب فيسبوك" aria-disabled="true">
+      <!-- 4. Facebook -->
+      <a href="https://www.facebook.com/share/1E9WbmfY9u/" target="_blank" rel="noopener noreferrer" class="link-btn" aria-label="زيارة حساب فيسبوك">
         <span class="icon" aria-hidden="true">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
           </svg>
         </span>
         <span class="label">فيسبوك</span>
+      </a>
+
+      <!-- 5. WhatsApp - Korean Skincare -->
+      <a href="https://wa.me/972526086035?text=AR%20%7C%20%D7%94%D7%99%D7%99%20%D7%9C%D7%99%D7%A8%D7%95%D7%9F%2C%20%D7%A8%D7%A6%D7%99%D7%AA%D7%99%20%D7%9C%D7%A9%D7%9E%D7%95%D7%A2%20%D7%A2%D7%9C%20%D7%9E%D7%95%D7%A6%D7%A8%D7%99%20%D7%94%D7%98%D7%99%D7%A4%D7%95%D7%97%20%D7%94%D7%A7%D7%95%D7%A8%D7%99%D7%90%D7%A0%D7%99%20%D7%A9%D7%9C%D7%9A%21%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%A7%D7%99%D7%A9%D7%95%D7%A8%20%D7%A9%D7%9C%20%D7%94%D7%93%D7%A3%20%D7%A0%D7%97%D7%99%D7%AA%D7%94%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%9E%D7%A2%D7%A0%D7%94." target="_blank" rel="noopener noreferrer" class="link-btn" aria-label="واتساب - العناية الكورية">
+        <span class="icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+        </span>
+        <span class="label">واتساب - العناية الكورية</span>
+      </a>
+
+      <!-- 6. WhatsApp - Dessert & Drink Sets (Coming Soon) -->
+      <div class="link-btn link-btn--soon">
+        <span class="icon" aria-hidden="true">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+          </svg>
+        </span>
+        <span class="label">واتساب - مجموعات الحلويات والمشروبات</span>
         <span class="soon-badge">قريباً!</span>
-      </a>
-
-      <!-- WhatsApp - Products -->
-      <a href="https://wa.me/972526086035?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D9%84%D9%8A%D8%B1%D9%88%D9%86%D8%8C%20%D8%A3%D8%B1%D9%8A%D8%AF%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%A7%D9%84%D9%85%D8%B2%D9%8A%D8%AF%20%D8%B9%D9%86%20%D9%85%D9%86%D8%AA%D8%AC%D8%A7%D8%AA%D9%83!" class="link-btn" aria-label="ارسال رسالة واتساب عن المنتجات">
-        <span class="icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-          </svg>
-        </span>
-        <span class="label">واتساب - منتجات</span>
-      </a>
-
-      <!-- WhatsApp - Consultation -->
-      <a href="https://wa.me/972526086035?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D9%84%D9%8A%D8%B1%D9%88%D9%86%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D9%81%D9%8A%20%D8%A7%D8%B3%D8%AA%D8%B4%D8%A7%D8%B1%D8%A9%20%D8%B4%D8%AE%D8%B5%D9%8A%D8%A9" class="link-btn" aria-label="ارسال رسالة واتساب لاستشارة شخصية">
-        <span class="icon" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
-          </svg>
-        </span>
-        <span class="label">واتساب - استشارة شخصية</span>
-      </a>
+      </div>
 
     </div>
 
