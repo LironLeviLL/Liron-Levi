@@ -7,7 +7,7 @@
 
   <!-- OG Meta Tags -->
   <meta property="og:title" content="Resume - Liron Levi">
-  <meta property="og:description" content="Resume - Liron Levi, Beauty & Wellness Consultant">
+  <meta property="og:description" content="Resume - Liron Levi, Actress &amp; Beauty &amp; Wellness Consultant">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lironlevill.github.io/Liron-Levi/resume-en.html">
 
@@ -16,119 +16,288 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="r-page">
+  <main>
 
-  <main class="resume-container">
+    <!-- ========== 1. Hero ========== -->
+    <section class="r-hero" aria-labelledby="r-hero-name">
+      <div class="r-bg-circles" aria-hidden="true">
+        <span class="r-bg-circles__c1"></span>
+        <span class="r-bg-circles__c2"></span>
+        <span class="r-bg-circles__c3"></span>
+        <span class="r-bg-circles__c4"></span>
+        <span class="r-bg-circles__c5"></span>
+      </div>
 
-    <!-- Resume Language Switcher -->
-    <nav class="lang-switcher" aria-label="Resume language selection">
-      <a href="resume.html" aria-label="Hebrew resume">HE</a>
-      <span class="separator" aria-hidden="true">|</span>
-      <a href="resume-en.html" class="active" aria-label="English resume">EN</a>
-    </nav>
+      <span class="r-hero__agency">Represented by: Agency Name</span>
 
-    <!-- Back Button -->
-    <a href="en.html" class="back-btn" aria-label="Back to home page">
-      <span class="icon" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="19" y1="12" x2="5" y2="12"/>
-          <polyline points="12 19 5 12 12 5"/>
+      <nav class="r-lang-switcher" aria-label="Language selection">
+        <a href="resume.html" aria-label="Hebrew">HE</a>
+        <span class="separator" aria-hidden="true">|</span>
+        <a href="resume-en.html" class="active" aria-label="English">EN</a>
+      </nav>
+
+      <a class="r-back-btn" href="en.html" aria-label="Back to home">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </span>
+        <span>Back</span>
+      </a>
+
+      <h1 id="r-hero-name" class="r-hero__name">LIRON LEVI</h1>
+      <p class="r-hero__subtitle">ACTRESS · BEAUTY &amp; WELLNESS CONSULTANT</p>
+
+      <div class="r-hero__photo r-placeholder r-placeholder--photo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7h3l2-2h8l2 2h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z"/>
+          <circle cx="12" cy="13" r="4"/>
         </svg>
-      </span>
-      <span>Back</span>
-    </a>
-
-    <!-- Header -->
-    <header class="resume-header">
-      <h1>Liron Levi</h1>
-      <p>052-608-6035 | email@example.com</p>
-      <p>Beauty & Wellness Consultant</p>
-    </header>
-
-    <!-- Professional Summary -->
-    <section class="resume-section">
-      <h2>Professional Summary</h2>
-      <p>
-        Beauty and wellness consultant with extensive experience in skincare and Korean cosmetics.
-        Specializing in personalized guidance and product matching tailored to individual client needs.
-        Excellent communication skills with the ability to work in a multicultural environment.
-      </p>
-    </section>
-
-    <!-- Work Experience -->
-    <section class="resume-section">
-      <h2>Work Experience</h2>
-
-      <div class="resume-entry">
-        <h3>Independent Beauty & Wellness Consultant</h3>
-        <p class="date">2022 - Present</p>
-        <p>
-          Personal consulting for clients in beauty and wellness, marketing and distribution of Korean skincare products,
-          building a client base and managing customer relationships through social media.
-        </p>
-      </div>
-
-      <div class="resume-entry">
-        <h3>Customer Service Representative</h3>
-        <p class="date">2020 - 2022</p>
-        <p>
-          Providing professional customer service, handling inquiries and complaints, working with CRM systems,
-          and meeting service and sales targets.
-        </p>
-      </div>
-
-      <div class="resume-entry">
-        <h3>Administrative Assistant</h3>
-        <p class="date">2018 - 2020</p>
-        <p>
-          Calendar management, scheduling meetings, coordinating with suppliers and clients,
-          and performing routine administrative tasks.
-        </p>
+        <span class="r-placeholder__label">PHOTO</span>
       </div>
     </section>
 
-    <!-- Education -->
-    <section class="resume-section">
-      <h2>Education</h2>
-
-      <div class="resume-entry">
-        <h3>Beauty & Wellness Consulting Certificate</h3>
-        <p class="date">2021</p>
-        <p>Professional training in skincare, cosmetics, and wellness.</p>
-      </div>
-
-      <div class="resume-entry">
-        <h3>High School Diploma</h3>
-        <p class="date">2017</p>
-        <p>Completed high school with a full matriculation certificate.</p>
+    <!-- ========== 2. Demo Reel ========== -->
+    <section class="r-reel" aria-labelledby="r-reel-title">
+      <h2 id="r-reel-title" class="r-reel__title">DEMO · REEL</h2>
+      <div class="r-placeholder r-placeholder--video" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <polygon points="10 8 16 12 10 16" fill="currentColor"/>
+        </svg>
+        <span class="r-placeholder__label">YOUTUBE VIDEO</span>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section class="resume-section">
-      <h2>Skills</h2>
-      <ul>
-        <li>Beauty and wellness consulting</li>
-        <li>Digital marketing and social media management</li>
-        <li>Customer service and sales</li>
-        <li>Customer relationship management (CRM)</li>
-        <li>Independent and team work</li>
-        <li>Organization and coordination</li>
-      </ul>
+    <!-- ========== 3. Tabs ========== -->
+    <section class="r-tabs" aria-label="Resume details">
+      <div class="r-bg-circles" aria-hidden="true">
+        <span class="r-bg-circles__c1"></span>
+        <span class="r-bg-circles__c2"></span>
+        <span class="r-bg-circles__c3"></span>
+        <span class="r-bg-circles__c4"></span>
+        <span class="r-bg-circles__c5"></span>
+      </div>
+
+      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-1" aria-label="Acting Education" checked>
+      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-2" aria-label="Singing Education">
+      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-3" aria-label="Experience Within Studies">
+      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-4" aria-label="Teaching Experience">
+      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-5" aria-label="Films">
+      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-6" aria-label="Personal Details">
+
+      <div class="r-tabs__list" role="tablist">
+        <label class="r-tabs__label" for="r-tab-1">Acting Education</label>
+        <label class="r-tabs__label" for="r-tab-2">Singing Education</label>
+        <label class="r-tabs__label" for="r-tab-3">Experience Within Studies</label>
+        <label class="r-tabs__label" for="r-tab-4">Teaching Experience</label>
+        <label class="r-tabs__label" for="r-tab-5">Films</label>
+        <label class="r-tabs__label" for="r-tab-6">Personal Details</label>
+      </div>
+
+      <div class="r-tabs__panels">
+        <div class="r-tabs__panel" id="r-tab-panel-1" role="tabpanel" aria-labelledby="r-tab-1">
+          <h3 class="r-tabs__panel-title">ACTING EDUCATION</h3>
+          <div class="r-timeline">
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Acting Studio Name</div>
+              <div class="r-timeline__meta"><span class="year">2025</span> | Mentor Name</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Private Acting Lessons</div>
+              <div class="r-timeline__meta"><span class="year">2024</span> | Mentor Name</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Drama School</div>
+              <div class="r-timeline__meta"><span class="year">2020-2023</span> | Mentor Name</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r-tabs__panel" id="r-tab-panel-2" role="tabpanel" aria-labelledby="r-tab-2">
+          <h3 class="r-tabs__panel-title">SINGING EDUCATION</h3>
+          <div class="r-timeline">
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Vocal Coach Studio</div>
+              <div class="r-timeline__meta"><span class="year">2024</span> | Coach Name</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Music Conservatory</div>
+              <div class="r-timeline__meta"><span class="year">2018-2022</span> | Teacher Name</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r-tabs__panel" id="r-tab-panel-3" role="tabpanel" aria-labelledby="r-tab-3">
+          <h3 class="r-tabs__panel-title">EXPERIENCE WITHIN STUDIES</h3>
+          <div class="r-timeline">
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Student Production "Title"</div>
+              <div class="r-timeline__meta"><span class="year">2023</span> | Director Name</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Workshop Performance</div>
+              <div class="r-timeline__meta"><span class="year">2022</span> | Director Name</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r-tabs__panel" id="r-tab-panel-4" role="tabpanel" aria-labelledby="r-tab-4">
+          <h3 class="r-tabs__panel-title">TEACHING EXPERIENCE</h3>
+          <div class="r-timeline">
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Drama Workshop for Kids</div>
+              <div class="r-timeline__meta"><span class="year">2024</span> | Studio Name</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Private Tutoring</div>
+              <div class="r-timeline__meta"><span class="year">2023</span> | Independent</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r-tabs__panel" id="r-tab-panel-5" role="tabpanel" aria-labelledby="r-tab-5">
+          <h3 class="r-tabs__panel-title">FILMS</h3>
+          <div class="r-timeline">
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Short Film "Title"</div>
+              <div class="r-timeline__meta"><span class="year">2024</span> | Director Name</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Student Film</div>
+              <div class="r-timeline__meta"><span class="year">2023</span> | Director Name</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r-tabs__panel" id="r-tab-panel-6" role="tabpanel" aria-labelledby="r-tab-6">
+          <h3 class="r-tabs__panel-title">PERSONAL DETAILS</h3>
+          <div class="r-timeline">
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Languages</div>
+              <div class="r-timeline__meta">Hebrew (native), English, Russian, Arabic (basic)</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Skills</div>
+              <div class="r-timeline__meta">Acting, Singing, Hosting</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Appearance</div>
+              <div class="r-timeline__meta">Height / Eye Color / Hair Color (details to be added)</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Languages -->
-    <section class="resume-section">
-      <h2>Languages</h2>
-      <ul>
-        <li>Hebrew (native)</li>
-        <li>English (fluent)</li>
-        <li>Russian (fluent)</li>
-        <li>Arabic (basic)</li>
-      </ul>
+    <!-- ========== 4. Updates Ticker ========== -->
+    <aside class="r-ticker" aria-label="Updates">
+      <span class="r-ticker__label">UPDATES |</span>
+      <div class="r-ticker__track">
+        <span class="r-ticker__text">Hebrew resume available | Auditions for Nissan Nativ Studio April 15th | English resume available | Singing performance April</span>
+      </div>
+    </aside>
+
+    <!-- ========== 5. Gallery ========== -->
+    <section class="r-gallery" aria-labelledby="r-gallery-title">
+      <div class="r-bg-circles" aria-hidden="true">
+        <span class="r-bg-circles__c1"></span>
+        <span class="r-bg-circles__c2"></span>
+        <span class="r-bg-circles__c3"></span>
+        <span class="r-bg-circles__c4"></span>
+        <span class="r-bg-circles__c5"></span>
+      </div>
+      <h2 id="r-gallery-title" class="r-gallery__title">GALLERY</h2>
+      <div class="r-gallery__grid">
+        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="r-placeholder__label">PHOTO</span>
+        </div>
+        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="r-placeholder__label">PHOTO</span>
+        </div>
+        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="r-placeholder__label">PHOTO</span>
+        </div>
+        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="r-placeholder__label">PHOTO</span>
+        </div>
+        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="r-placeholder__label">PHOTO</span>
+        </div>
+        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="r-placeholder__label">PHOTO</span>
+        </div>
+      </div>
     </section>
+
+    <!-- ========== 6. Links ========== -->
+    <section class="r-links" aria-labelledby="r-links-title">
+      <h2 id="r-links-title" class="r-links__title">LINKS</h2>
+      <div class="r-links__list">
+        <a class="r-link" href="#">
+          <span class="r-link__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </span>
+          <span class="r-link__label">Liron Levi | Resume Hebrew PDF</span>
+          <span class="r-link__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </a>
+        <a class="r-link" href="#">
+          <span class="r-link__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </span>
+          <span class="r-link__label">Liron Levi | Resume English PDF</span>
+          <span class="r-link__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== 7. Let's Connect ========== -->
+    <section class="r-connect" aria-labelledby="r-connect-title">
+      <h2 id="r-connect-title" class="r-connect__title">LET'S CONNECT</h2>
+      <p class="r-connect__sub">Interested in working together? I'd love to hear from you.</p>
+      <span class="r-connect__agency">Represented by: Agency Name</span>
+
+      <div class="r-connect__buttons">
+        <a class="r-connect__btn" href="#" aria-label="Send email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+          <span class="r-connect__btn-text">
+            <span class="r-connect__btn-label">EMAIL</span>
+            <span class="r-connect__btn-value">email@example.com</span>
+          </span>
+        </a>
+        <a class="r-connect__btn" href="#" aria-label="Call phone">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="r-connect__btn-text">
+            <span class="r-connect__btn-label">PHONE</span>
+            <span class="r-connect__btn-value">+972 52 608 6035</span>
+          </span>
+        </a>
+      </div>
+
+      <a class="r-connect__btn r-connect__btn--ig" href="#" aria-label="Liron Levi on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+        <span>@LironLevi</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </section>
+
+    <!-- ========== 8. Footer ========== -->
+    <footer class="r-footer">
+      <div class="r-footer__mark" aria-hidden="true">LL</div>
+      <span class="r-footer__credit-label">DESIGNED &amp; DEVELOPED BY:</span>
+      <span class="r-footer__credit-name">LIRON LEVI</span>
+      <span class="r-footer__copy">© 2026 LIRON LEVI</span>
+    </footer>
 
   </main>
-
 </body>
 </html>

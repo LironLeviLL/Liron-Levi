@@ -7,7 +7,7 @@
 
   <!-- OG Meta Tags -->
   <meta property="og:title" content="קורות חיים - לירון לוי">
-  <meta property="og:description" content="קורות חיים - לירון לוי, יועצת טיפוח ובריאות">
+  <meta property="og:description" content="קורות חיים - לירון לוי, שחקנית ויועצת טיפוח ובריאות">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://lironlevill.github.io/Liron-Levi/resume.html">
 
@@ -16,118 +16,288 @@
 
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="r-page">
+  <main>
 
-  <main class="resume-container">
+    <!-- ========== 1. Hero ========== -->
+    <section class="r-hero" aria-labelledby="r-hero-name">
+      <div class="r-bg-circles" aria-hidden="true">
+        <span class="r-bg-circles__c1"></span>
+        <span class="r-bg-circles__c2"></span>
+        <span class="r-bg-circles__c3"></span>
+        <span class="r-bg-circles__c4"></span>
+        <span class="r-bg-circles__c5"></span>
+      </div>
 
-    <!-- Resume Language Switcher -->
-    <nav class="lang-switcher" aria-label="שפת קורות חיים">
-      <a href="resume.html" class="active" aria-label="קורות חיים בעברית">HE</a>
-      <span class="separator" aria-hidden="true">|</span>
-      <a href="resume-en.html" aria-label="Resume in English">EN</a>
-    </nav>
+      <span class="r-hero__agency">מיוצגת על ידי: Agency Name</span>
 
-    <!-- Back Button -->
-    <a href="index.html" class="back-btn" aria-label="חזרה לדף הראשי">
-      <span class="icon" aria-hidden="true">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="19" y1="12" x2="5" y2="12"/>
-          <polyline points="12 19 5 12 12 5"/>
+      <nav class="r-lang-switcher" aria-label="בחירת שפה">
+        <a href="resume.html" class="active" aria-label="עברית">HE</a>
+        <span class="separator" aria-hidden="true">|</span>
+        <a href="resume-en.html" aria-label="English">EN</a>
+      </nav>
+
+      <a class="r-back-btn" href="index.html" aria-label="חזרה לדף הבית">
+        <span class="icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+        </span>
+        <span>חזרה</span>
+      </a>
+
+      <h1 id="r-hero-name" class="r-hero__name">לירון לוי</h1>
+      <p class="r-hero__subtitle">שחקנית · יועצת טיפוח ובריאות</p>
+
+      <div class="r-hero__photo r-placeholder r-placeholder--photo" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M3 7h3l2-2h8l2 2h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z"/>
+          <circle cx="12" cy="13" r="4"/>
         </svg>
-      </span>
-      <span>חזרה</span>
-    </a>
-
-    <!-- Header -->
-    <header class="resume-header">
-      <h1>לירון לוי</h1>
-      <p>052-608-6035 | email@example.com</p>
-      <p>יועצת טיפוח ובריאות</p>
-    </header>
-
-    <!-- Professional Summary -->
-    <section class="resume-section">
-      <h2>תקציר מקצועי</h2>
-      <p>
-        יועצת טיפוח ובריאות עם ניסיון רב בתחום מוצרי הטיפוח והקוסמטיקה הקוריאנית.
-        מתמחה בליווי אישי ובהתאמת מוצרים ללקוחות בהתאם לצרכים האישיים שלהם.
-        בעלת כישורי תקשורת מצוינים ויכולת עבודה בסביבה רב-תרבותית.
-      </p>
-    </section>
-
-    <!-- Work Experience -->
-    <section class="resume-section">
-      <h2>ניסיון תעסוקתי</h2>
-
-      <div class="resume-entry">
-        <h3>יועצת טיפוח ובריאות עצמאית</h3>
-        <p class="date">2022 - היום</p>
-        <p>
-          ייעוץ אישי ללקוחות בתחום הטיפוח והבריאות, שיווק והפצת מוצרי טיפוח קוריאניים,
-          בניית בסיס לקוחות וניהול קשרי לקוחות דרך רשתות חברתיות.
-        </p>
-      </div>
-
-      <div class="resume-entry">
-        <h3>נציגת שירות לקוחות</h3>
-        <p class="date">2020 - 2022</p>
-        <p>
-          מתן שירות לקוחות מקצועי, טיפול בפניות ותלונות, עבודה מול מערכות ניהול לקוחות
-          ועמידה ביעדי שירות ומכירות.
-        </p>
-      </div>
-
-      <div class="resume-entry">
-        <h3>עוזרת מנהלית</h3>
-        <p class="date">2018 - 2020</p>
-        <p>
-          ניהול יומן, תיאום פגישות, עבודה מול ספקים ולקוחות,
-          וביצוע משימות אדמיניסטרטיביות שוטפות.
-        </p>
+        <span class="r-placeholder__label">PHOTO</span>
       </div>
     </section>
 
-    <!-- Education -->
-    <section class="resume-section">
-      <h2>השכלה</h2>
-
-      <div class="resume-entry">
-        <h3>תעודת יועצת טיפוח ובריאות</h3>
-        <p class="date">2021</p>
-        <p>הכשרה מקצועית בתחום הטיפוח, הקוסמטיקה והבריאות.</p>
-      </div>
-
-      <div class="resume-entry">
-        <h3>תעודת בגרות מלאה</h3>
-        <p class="date">2017</p>
-        <p>סיום לימודי תיכון עם תעודת בגרות מלאה.</p>
+    <!-- ========== 2. Demo Reel ========== -->
+    <section class="r-reel" aria-labelledby="r-reel-title">
+      <h2 id="r-reel-title" class="r-reel__title">DEMO · REEL</h2>
+      <div class="r-placeholder r-placeholder--video" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <polygon points="10 8 16 12 10 16" fill="currentColor"/>
+        </svg>
+        <span class="r-placeholder__label">YOUTUBE VIDEO</span>
       </div>
     </section>
 
-    <!-- Skills -->
-    <section class="resume-section">
-      <h2>כישורים</h2>
-      <ul>
-        <li>ייעוץ טיפוח ובריאות</li>
-        <li>שיווק דיגיטלי וניהול רשתות חברתיות</li>
-        <li>שירות לקוחות ומכירות</li>
-        <li>ניהול קשרי לקוחות (CRM)</li>
-        <li>עבודה עצמאית ובצוות</li>
-        <li>יכולת ארגון ותיאום</li>
-      </ul>
+    <!-- ========== 3. Tabs ========== -->
+    <section class="r-tabs" aria-label="פרטי קורות חיים">
+      <div class="r-bg-circles" aria-hidden="true">
+        <span class="r-bg-circles__c1"></span>
+        <span class="r-bg-circles__c2"></span>
+        <span class="r-bg-circles__c3"></span>
+        <span class="r-bg-circles__c4"></span>
+        <span class="r-bg-circles__c5"></span>
+      </div>
+
+      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-1" aria-label="השכלה במשחק" checked>
+      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-2" aria-label="השכלה בשירה">
+      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-3" aria-label="ניסיון במהלך הלימודים">
+      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-4" aria-label="ניסיון בהוראה">
+      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-5" aria-label="סרטים">
+      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-6" aria-label="פרטים אישיים">
+
+      <div class="r-tabs__list" role="tablist">
+        <label class="r-tabs__label" for="r-tab-1">השכלה במשחק</label>
+        <label class="r-tabs__label" for="r-tab-2">השכלה בשירה</label>
+        <label class="r-tabs__label" for="r-tab-3">ניסיון במהלך הלימודים</label>
+        <label class="r-tabs__label" for="r-tab-4">ניסיון בהוראה</label>
+        <label class="r-tabs__label" for="r-tab-5">סרטים</label>
+        <label class="r-tabs__label" for="r-tab-6">פרטים אישיים</label>
+      </div>
+
+      <div class="r-tabs__panels">
+        <div class="r-tabs__panel" id="r-tab-panel-1" role="tabpanel" aria-labelledby="r-tab-1">
+          <h3 class="r-tabs__panel-title">השכלה במשחק</h3>
+          <div class="r-timeline">
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Acting Studio Name</div>
+              <div class="r-timeline__meta"><span class="year">2025</span> | Mentor Name</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Private Acting Lessons</div>
+              <div class="r-timeline__meta"><span class="year">2024</span> | Mentor Name</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Drama School</div>
+              <div class="r-timeline__meta"><span class="year">2020-2023</span> | Mentor Name</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r-tabs__panel" id="r-tab-panel-2" role="tabpanel" aria-labelledby="r-tab-2">
+          <h3 class="r-tabs__panel-title">השכלה בשירה</h3>
+          <div class="r-timeline">
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Vocal Coach Studio</div>
+              <div class="r-timeline__meta"><span class="year">2024</span> | Coach Name</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Music Conservatory</div>
+              <div class="r-timeline__meta"><span class="year">2018-2022</span> | Teacher Name</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r-tabs__panel" id="r-tab-panel-3" role="tabpanel" aria-labelledby="r-tab-3">
+          <h3 class="r-tabs__panel-title">ניסיון במהלך הלימודים</h3>
+          <div class="r-timeline">
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Student Production "Title"</div>
+              <div class="r-timeline__meta"><span class="year">2023</span> | Director Name</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Workshop Performance</div>
+              <div class="r-timeline__meta"><span class="year">2022</span> | Director Name</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r-tabs__panel" id="r-tab-panel-4" role="tabpanel" aria-labelledby="r-tab-4">
+          <h3 class="r-tabs__panel-title">ניסיון בהוראה</h3>
+          <div class="r-timeline">
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Drama Workshop for Kids</div>
+              <div class="r-timeline__meta"><span class="year">2024</span> | Studio Name</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Private Tutoring</div>
+              <div class="r-timeline__meta"><span class="year">2023</span> | Independent</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r-tabs__panel" id="r-tab-panel-5" role="tabpanel" aria-labelledby="r-tab-5">
+          <h3 class="r-tabs__panel-title">סרטים</h3>
+          <div class="r-timeline">
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Short Film "Title"</div>
+              <div class="r-timeline__meta"><span class="year">2024</span> | Director Name</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Student Film</div>
+              <div class="r-timeline__meta"><span class="year">2023</span> | Director Name</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="r-tabs__panel" id="r-tab-panel-6" role="tabpanel" aria-labelledby="r-tab-6">
+          <h3 class="r-tabs__panel-title">פרטים אישיים</h3>
+          <div class="r-timeline">
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">שפות</div>
+              <div class="r-timeline__meta">עברית (שפת אם), אנגלית, רוסית, ערבית (בסיסית)</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">כישורים</div>
+              <div class="r-timeline__meta">משחק, שירה, הנחיה</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">מאפיינים</div>
+              <div class="r-timeline__meta">גובה / צבע עיניים / צבע שיער (פרטים יתווספו)</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <!-- Languages -->
-    <section class="resume-section">
-      <h2>שפות</h2>
-      <ul>
-        <li>עברית (שפת אם)</li>
-        <li>אנגלית (רמה גבוהה)</li>
-        <li>רוסית (רמה גבוהה)</li>
-      </ul>
+    <!-- ========== 4. Updates Ticker ========== -->
+    <aside class="r-ticker" aria-label="עדכונים">
+      <span class="r-ticker__label">עדכונים |</span>
+      <div class="r-ticker__track">
+        <span class="r-ticker__text">ניתן לראות רזומה בעברית | אודישנים לסטודיו ניסן נתיב 15 לאפריל | ניתן לראות רזומה באנגלית | הופעת שירה אפריל</span>
+      </div>
+    </aside>
+
+    <!-- ========== 5. Gallery ========== -->
+    <section class="r-gallery" aria-labelledby="r-gallery-title">
+      <div class="r-bg-circles" aria-hidden="true">
+        <span class="r-bg-circles__c1"></span>
+        <span class="r-bg-circles__c2"></span>
+        <span class="r-bg-circles__c3"></span>
+        <span class="r-bg-circles__c4"></span>
+        <span class="r-bg-circles__c5"></span>
+      </div>
+      <h2 id="r-gallery-title" class="r-gallery__title">גלריה</h2>
+      <div class="r-gallery__grid">
+        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="r-placeholder__label">PHOTO</span>
+        </div>
+        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="r-placeholder__label">PHOTO</span>
+        </div>
+        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="r-placeholder__label">PHOTO</span>
+        </div>
+        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="r-placeholder__label">PHOTO</span>
+        </div>
+        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="r-placeholder__label">PHOTO</span>
+        </div>
+        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
+          <span class="r-placeholder__label">PHOTO</span>
+        </div>
+      </div>
     </section>
+
+    <!-- ========== 6. Links ========== -->
+    <section class="r-links" aria-labelledby="r-links-title">
+      <h2 id="r-links-title" class="r-links__title">קישורים</h2>
+      <div class="r-links__list">
+        <a class="r-link" href="#">
+          <span class="r-link__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </span>
+          <span class="r-link__label">לירון לוי | קורות חיים בעברית PDF</span>
+          <span class="r-link__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </a>
+        <a class="r-link" href="#">
+          <span class="r-link__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </span>
+          <span class="r-link__label">לירון לוי | קורות חיים באנגלית PDF</span>
+          <span class="r-link__chevron" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ========== 7. Let's Connect ========== -->
+    <section class="r-connect" aria-labelledby="r-connect-title">
+      <h2 id="r-connect-title" class="r-connect__title">בואו נתחבר</h2>
+      <p class="r-connect__sub">מעוניינים לעבוד יחד? אשמח לשמוע מכם.</p>
+      <span class="r-connect__agency">מיוצגת על ידי: Agency Name</span>
+
+      <div class="r-connect__buttons">
+        <a class="r-connect__btn" href="#" aria-label="שליחת אימייל">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
+          <span class="r-connect__btn-text">
+            <span class="r-connect__btn-label">אימייל</span>
+            <span class="r-connect__btn-value">email@example.com</span>
+          </span>
+        </a>
+        <a class="r-connect__btn" href="#" aria-label="התקשרות לטלפון">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.33 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <span class="r-connect__btn-text">
+            <span class="r-connect__btn-label">טלפון</span>
+            <span class="r-connect__btn-value">+972 52 608 6035</span>
+          </span>
+        </a>
+      </div>
+
+      <a class="r-connect__btn r-connect__btn--ig" href="#" aria-label="אינסטגרם של לירון לוי">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor"/></svg>
+        <span>@LironLevi</span>
+        <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+      </a>
+    </section>
+
+    <!-- ========== 8. Footer ========== -->
+    <footer class="r-footer">
+      <div class="r-footer__mark" aria-hidden="true">LL</div>
+      <span class="r-footer__credit-label">DESIGNED &amp; DEVELOPED BY:</span>
+      <span class="r-footer__credit-name">LIRON LEVI</span>
+      <span class="r-footer__copy">© 2026 LIRON LEVI</span>
+    </footer>
 
   </main>
-
 </body>
 </html>
