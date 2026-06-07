@@ -21,12 +21,28 @@
 
     <!-- ========== 1. Hero ========== -->
     <section class="r-hero" aria-labelledby="r-hero-name">
-      <div class="r-bg-circles" aria-hidden="true">
-        <span class="r-bg-circles__c1"></span>
-        <span class="r-bg-circles__c2"></span>
-        <span class="r-bg-circles__c3"></span>
-        <span class="r-bg-circles__c4"></span>
-        <span class="r-bg-circles__c5"></span>
+      <div class="r-bg-stars" aria-hidden="true">
+        <span class="r-star r-star--1"></span>
+        <span class="r-star r-star--2"></span>
+        <span class="r-star r-star--3"></span>
+        <span class="r-star r-star--4"></span>
+        <span class="r-star r-star--5"></span>
+        <span class="r-star r-star--6"></span>
+      </div>
+
+      <div class="r-hero-rings" aria-hidden="true">
+        <svg class="r-ring r-ring--1" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+          <ellipse cx="50" cy="50" rx="48" ry="46.5" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <svg class="r-ring r-ring--2" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+          <ellipse cx="50" cy="50" rx="46.5" ry="48" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <svg class="r-ring r-ring--3" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+          <ellipse cx="50" cy="50" rx="48" ry="47" vector-effect="non-scaling-stroke"/>
+        </svg>
+        <svg class="r-ring r-ring--4" viewBox="0 0 100 100" fill="none" stroke="currentColor" stroke-width="1.5">
+          <ellipse cx="50" cy="50" rx="47" ry="48" vector-effect="non-scaling-stroke"/>
+        </svg>
       </div>
 
       <span class="r-hero__agency">Represented by: Agency Name</span>
@@ -46,7 +62,7 @@
       </div>
 
       <h1 id="r-hero-name" class="r-hero__name">LIRON LEVI</h1>
-      <p class="r-hero__subtitle">ACTRESS · BEAUTY &amp; WELLNESS CONSULTANT</p>
+      <p class="r-hero__subtitle">ACTRESS</p>
 
       <div class="r-hero__photo r-placeholder r-placeholder--photo" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
@@ -60,39 +76,42 @@
     <!-- ========== 2. Demo Reel ========== -->
     <section class="r-reel" aria-labelledby="r-reel-title">
       <h2 id="r-reel-title" class="r-reel__title">DEMO · REEL</h2>
-      <div class="r-placeholder r-placeholder--video" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <polygon points="10 8 16 12 10 16" fill="currentColor"/>
-        </svg>
-        <span class="r-placeholder__label">YOUTUBE VIDEO</span>
+      <div class="demo-reel-grid">
+        <figure class="demo-reel-item">
+          <figcaption>Hebrew Audition</figcaption>
+          <div class="r-placeholder r-placeholder--video" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="10 8 16 12 10 16" fill="currentColor"/>
+            </svg>
+            <span class="r-placeholder__label">YOUTUBE VIDEO</span>
+          </div>
+        </figure>
+        <figure class="demo-reel-item">
+          <figcaption>English Audition</figcaption>
+          <div class="r-placeholder r-placeholder--video" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polygon points="10 8 16 12 10 16" fill="currentColor"/>
+            </svg>
+            <span class="r-placeholder__label">YOUTUBE VIDEO</span>
+          </div>
+        </figure>
       </div>
     </section>
 
     <!-- ========== 3. Tabs ========== -->
     <section class="r-tabs" aria-label="Resume details">
-      <div class="r-bg-circles" aria-hidden="true">
-        <span class="r-bg-circles__c1"></span>
-        <span class="r-bg-circles__c2"></span>
-        <span class="r-bg-circles__c3"></span>
-        <span class="r-bg-circles__c4"></span>
-        <span class="r-bg-circles__c5"></span>
-      </div>
-
       <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-1" aria-label="Acting Education" checked>
       <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-2" aria-label="Singing Education">
       <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-3" aria-label="Experience Within Studies">
-      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-4" aria-label="Teaching Experience">
-      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-5" aria-label="Films">
-      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-6" aria-label="Personal Details">
+      <input class="r-tabs__radio" type="radio" name="resume-tab" id="r-tab-4" aria-label="Personal Details">
 
       <div class="r-tabs__list" role="tablist">
         <label class="r-tabs__label" for="r-tab-1">Acting Education</label>
         <label class="r-tabs__label" for="r-tab-2">Singing Education</label>
         <label class="r-tabs__label" for="r-tab-3">Experience Within Studies</label>
-        <label class="r-tabs__label" for="r-tab-4">Teaching Experience</label>
-        <label class="r-tabs__label" for="r-tab-5">Films</label>
-        <label class="r-tabs__label" for="r-tab-6">Personal Details</label>
+        <label class="r-tabs__label" for="r-tab-4">Personal Details</label>
       </div>
 
       <div class="r-tabs__panels">
@@ -100,16 +119,32 @@
           <h3 class="r-tabs__panel-title">ACTING EDUCATION</h3>
           <div class="r-timeline">
             <div class="r-timeline__entry">
-              <div class="r-timeline__title">Acting Studio Name</div>
-              <div class="r-timeline__meta"><span class="year">2025</span> | Mentor Name</div>
+              <div class="r-timeline__title">Hardon Studio</div>
+              <div class="r-timeline__meta"><span class="year">2026</span> | Introduction to Camera Acting</div>
+              <div class="r-exp-detail">Yuval Hardon</div>
             </div>
             <div class="r-timeline__entry">
-              <div class="r-timeline__title">Private Acting Lessons</div>
-              <div class="r-timeline__meta"><span class="year">2024</span> | Mentor Name</div>
+              <div class="r-timeline__title">LP Acting Studio - Annual Track</div>
+              <div class="r-timeline__meta"><span class="year">2025-2026</span> | NLP Acting Method</div>
+              <div class="r-exp-detail">Meirav Levi + Nati Kluger</div>
+              <div class="r-timeline__meta"><span class="year">2025</span> | Camera Acting Studies</div>
+              <div class="r-exp-detail">Reut Alush + Yarden Toussia-Cohen</div>
+              <div class="r-timeline__meta"><span class="year">2025</span> | Stage & Theater Studies</div>
+              <div class="r-exp-detail">Reut Alush</div>
             </div>
             <div class="r-timeline__entry">
-              <div class="r-timeline__title">Drama School</div>
-              <div class="r-timeline__meta"><span class="year">2020-2023</span> | Mentor Name</div>
+              <div class="r-timeline__title">The Comedy Academy</div>
+              <div class="r-timeline__meta"><span class="year">2025</span> | Comedy Studies</div>
+              <div class="r-exp-detail">Ohad Perach</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Nissan Nativ</div>
+              <div class="r-timeline__meta"><span class="year">2023</span> | Camera Acting</div>
+              <div class="r-exp-detail">Dor Zweigenboim</div>
+              <div class="r-timeline__meta"><span class="year">2023</span> | Improvisation</div>
+              <div class="r-exp-detail">Omri HaCohen</div>
+              <div class="r-timeline__meta"><span class="year">2023</span> | Acting Fundamentals</div>
+              <div class="r-exp-detail">Sharon Stark</div>
             </div>
           </div>
         </div>
@@ -118,12 +153,9 @@
           <h3 class="r-tabs__panel-title">SINGING EDUCATION</h3>
           <div class="r-timeline">
             <div class="r-timeline__entry">
-              <div class="r-timeline__title">Vocal Coach Studio</div>
-              <div class="r-timeline__meta"><span class="year">2024</span> | Coach Name</div>
-            </div>
-            <div class="r-timeline__entry">
-              <div class="r-timeline__title">Music Conservatory</div>
-              <div class="r-timeline__meta"><span class="year">2018-2022</span> | Teacher Name</div>
+              <div class="r-timeline__title">Nissan Nativ: Vocal Coaching</div>
+              <div class="r-timeline__meta"><span class="year">2023</span> | "Acting Fundamentals Course"</div>
+              <div class="r-exp-detail">Irit Stark</div>
             </div>
           </div>
         </div>
@@ -132,58 +164,67 @@
           <h3 class="r-tabs__panel-title">EXPERIENCE WITHIN STUDIES</h3>
           <div class="r-timeline">
             <div class="r-timeline__entry">
-              <div class="r-timeline__title">Student Production "Title"</div>
-              <div class="r-timeline__meta"><span class="year">2023</span> | Director Name</div>
-            </div>
-            <div class="r-timeline__entry">
-              <div class="r-timeline__title">Workshop Performance</div>
-              <div class="r-timeline__meta"><span class="year">2022</span> | Director Name</div>
+              <div class="r-timeline__title">Stage & Theater</div>
+              <div class="r-timeline__meta"><span class="year">2025</span> | Role: "Dialogue - Friendship - Shani"</div>
+              <div class="r-exp-detail">LP Final Project - Stage Acting</div>
+              <div class="r-timeline__meta"><span class="year">2025</span> | Role: "Monologue - Ta'agad - Lia"</div>
+              <div class="r-exp-detail">LP Final Project - Stage Acting</div>
             </div>
           </div>
         </div>
 
         <div class="r-tabs__panel" id="r-tab-panel-4" role="tabpanel" aria-labelledby="r-tab-4">
-          <h3 class="r-tabs__panel-title">TEACHING EXPERIENCE</h3>
+          <h3 class="r-tabs__panel-title">PERSONAL DETAILS & ADDITIONAL SKILLS</h3>
           <div class="r-timeline">
             <div class="r-timeline__entry">
-              <div class="r-timeline__title">Drama Workshop for Kids</div>
-              <div class="r-timeline__meta"><span class="year">2024</span> | Studio Name</div>
+              <div class="r-timeline__title">Personal Details</div>
+              <div class="r-timeline__meta"><span class="year">Date of Birth:</span> 27/09/2001</div>
+              <div class="r-timeline__meta"><span class="year">Height:</span> 1.60 m</div>
             </div>
-            <div class="r-timeline__entry">
-              <div class="r-timeline__title">Private Tutoring</div>
-              <div class="r-timeline__meta"><span class="year">2023</span> | Independent</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="r-tabs__panel" id="r-tab-panel-5" role="tabpanel" aria-labelledby="r-tab-5">
-          <h3 class="r-tabs__panel-title">FILMS</h3>
-          <div class="r-timeline">
-            <div class="r-timeline__entry">
-              <div class="r-timeline__title">Short Film "Title"</div>
-              <div class="r-timeline__meta"><span class="year">2024</span> | Director Name</div>
-            </div>
-            <div class="r-timeline__entry">
-              <div class="r-timeline__title">Student Film</div>
-              <div class="r-timeline__meta"><span class="year">2023</span> | Director Name</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="r-tabs__panel" id="r-tab-panel-6" role="tabpanel" aria-labelledby="r-tab-6">
-          <h3 class="r-tabs__panel-title">PERSONAL DETAILS</h3>
-          <div class="r-timeline">
             <div class="r-timeline__entry">
               <div class="r-timeline__title">Languages</div>
-              <div class="r-timeline__meta">Hebrew (native), English, Russian, Arabic (basic)</div>
+              <div class="r-timeline__meta">Hebrew - <span class="year">Native</span></div>
+              <div class="r-timeline__meta">English - <span class="year">Fluent</span></div>
             </div>
             <div class="r-timeline__entry">
-              <div class="r-timeline__title">Skills</div>
-              <div class="r-timeline__meta">Acting, Singing, Hosting</div>
+              <div class="r-timeline__title">Additional Skills</div>
+              <div class="r-skills-row">
+                <span class="r-skill-pill">Marketing</span>
+                <span class="r-skill-pill">Facial Skincare</span>
+                <span class="r-skill-pill">Rollerblading</span>
+              </div>
             </div>
             <div class="r-timeline__entry">
-              <div class="r-timeline__title">Appearance</div>
-              <div class="r-timeline__meta">Height / Eye Color / Hair Color (details to be added)</div>
+              <div class="r-timeline__title">General</div>
+              <div class="r-timeline__meta"><span class="year">Passport:</span> Israel</div>
+              <div class="r-timeline__meta"><span class="year">Driving License:</span> Yes</div>
+              <div class="r-timeline__meta"><span class="year">Eye Color:</span> Brown</div>
+              <div class="r-timeline__meta"><span class="year">Hair Color:</span> Black</div>
+              <div class="r-timeline__meta"><span class="year">Location:</span> Rishon LeZion</div>
+            </div>
+            <div class="r-timeline__entry">
+              <div class="r-timeline__title">Get In Touch</div>
+              <a class="r-contact-row" href="https://www.instagram.com/liron.levi.369?igsh=MTNvN3FhbHY1dnd5ZQ==" target="_blank" rel="noopener noreferrer">
+                <svg class="r-contact-row__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none"/>
+                </svg>
+                <span>@liron.levi.369</span>
+              </a>
+              <a class="r-contact-row" href="mailto:lironlevi3099.11@gmail.com">
+                <svg class="r-contact-row__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2"/>
+                  <path d="m3 7 9 6 9-6"/>
+                </svg>
+                <span>lironlevi3099.11@gmail.com</span>
+              </a>
+              <a class="r-contact-row" href="tel:+972526086035">
+                <svg class="r-contact-row__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span>+972 52 608 6035</span>
+              </a>
             </div>
           </div>
         </div>
@@ -194,19 +235,15 @@
     <aside class="r-ticker" aria-label="Updates">
       <span class="r-ticker__label">UPDATES |</span>
       <div class="r-ticker__track">
-        <span class="r-ticker__text">Hebrew resume available | Auditions for Nissan Nativ Studio April 15th | English resume available | Singing performance April</span>
+        <div class="r-ticker__text">
+          <span class="r-ticker__copy">Resume available as PDF in Hebrew and English via the links below | Specializing in Korean facial skincare | Studying organ, guitar and vocal coaching | Learning Shadow Boxing</span>
+          <span class="r-ticker__copy" aria-hidden="true">Resume available as PDF in Hebrew and English via the links below | Specializing in Korean facial skincare | Studying organ, guitar and vocal coaching | Learning Shadow Boxing</span>
+        </div>
       </div>
     </aside>
 
     <!-- ========== 5. Gallery ========== -->
     <section class="r-gallery" aria-labelledby="r-gallery-title">
-      <div class="r-bg-circles" aria-hidden="true">
-        <span class="r-bg-circles__c1"></span>
-        <span class="r-bg-circles__c2"></span>
-        <span class="r-bg-circles__c3"></span>
-        <span class="r-bg-circles__c4"></span>
-        <span class="r-bg-circles__c5"></span>
-      </div>
       <h2 id="r-gallery-title" class="r-gallery__title">GALLERY</h2>
       <div class="r-gallery__grid">
         <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">

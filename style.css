@@ -71,7 +71,7 @@
   --decorative-line: rgba(114, 47, 55, 0.18);
   --r-shadow-soft: 0 8px 24px rgba(45, 20, 24, 0.08);
   --r-shadow-hover: 0 14px 32px rgba(45, 20, 24, 0.14);
-  --r-ticker-duration: 30s;
+  --r-ticker-duration: 40s;
 }
 
 /* === Reset === */
@@ -383,31 +383,129 @@ ul {
 }
 [dir="rtl"] .r-back-btn .icon { transform: scaleX(-1); }
 
-/* --- Decorative drifting circles (hero/tabs/gallery) -- */
-.r-bg-circles {
+/* --- Decorative drifting stars (hero/tabs/gallery) ---- */
+.r-bg-stars {
   position: absolute;
   inset: 0;
   pointer-events: none;
   overflow: hidden;
   z-index: 0;
 }
-.r-bg-circles > span {
+/* 4-point sparkle stars via clip-path. Gold fill at low opacity stays visible on the
+   cream background without competing with the text that sits above (z-index: 1). */
+.r-star {
   position: absolute;
-  border: 1px solid var(--decorative-line);
-  border-radius: 50%;
   display: block;
+  background: var(--color-gold-soft);
+  opacity: 0.35;
+  clip-path: polygon(
+    50% 0%, 61% 39%, 100% 50%, 61% 61%,
+    50% 100%, 39% 61%, 0% 50%, 39% 39%
+  );
+  will-change: transform;
 }
-.r-bg-circles__c1 { width: 420px; height: 420px; top: -120px; inset-inline-start: -80px; animation: r-drift1 26s ease-in-out infinite; }
-.r-bg-circles__c2 { width: 320px; height: 320px; top: 30%; inset-inline-end: -100px; animation: r-drift2 31s ease-in-out -4s infinite; }
-.r-bg-circles__c3 { width: 260px; height: 260px; bottom: -80px; inset-inline-start: 25%; animation: r-drift3 22s ease-in-out -9s infinite; }
-.r-bg-circles__c4 { width: 180px; height: 180px; top: 15%; inset-inline-start: 40%; animation: r-drift4 28s ease-in-out -2s infinite; }
-.r-bg-circles__c5 { width: 500px; height: 500px; bottom: -200px; inset-inline-end: -180px; animation: r-drift5 34s ease-in-out -6s infinite; }
 
-@keyframes r-drift1 { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(40px, -30px) rotate(8deg); } }
-@keyframes r-drift2 { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(-50px, 40px) rotate(-10deg); } }
-@keyframes r-drift3 { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(35px, 35px) rotate(12deg); } }
-@keyframes r-drift4 { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(-25px, -45px) rotate(-6deg); } }
-@keyframes r-drift5 { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(-30px, -20px) rotate(5deg); } }
+/* Sizes and starting positions: spread across the section, varied scale. */
+.r-star--1 { width: 22px; height: 22px; top: 12%; inset-inline-start: 8%; }
+.r-star--2 { width: 14px; height: 14px; top: 25%; inset-inline-start: 78%; }
+.r-star--3 { width: 30px; height: 30px; top: 55%; inset-inline-start: 15%; }
+.r-star--4 { width: 12px; height: 12px; top: 70%; inset-inline-start: 85%; }
+.r-star--5 { width: 18px; height: 18px; top: 40%; inset-inline-start: 45%; }
+.r-star--6 { width: 26px; height: 26px; top: 80%; inset-inline-start: 55%; }
+
+/* Drift across a large portion of the section so motion reads clearly, plus a slow
+   spin. Transform-only = GPU friendly. Each star gets a different drift + twinkle
+   combination (and reversed playback for some) so they never sync up. */
+.r-star--1 { animation: star-drift-a 38s ease-in-out infinite, star-twinkle 4s ease-in-out infinite; }
+.r-star--2 { animation: star-drift-b 29s ease-in-out infinite, star-twinkle 5.5s ease-in-out infinite 1s; }
+.r-star--3 { animation: star-drift-c 45s ease-in-out infinite, star-twinkle 6s ease-in-out infinite 2s; }
+.r-star--4 { animation: star-drift-a 33s ease-in-out infinite reverse, star-twinkle 4.5s ease-in-out infinite 0.5s; }
+.r-star--5 { animation: star-drift-b 41s ease-in-out infinite reverse, star-twinkle 5s ease-in-out infinite 1.5s; }
+.r-star--6 { animation: star-drift-c 36s ease-in-out infinite reverse, star-twinkle 7s ease-in-out infinite; }
+
+@keyframes star-drift-a {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  25%  { transform: translate(30vw, 18vh) rotate(90deg); }
+  50%  { transform: translate(55vw, -5vh) rotate(180deg); }
+  75%  { transform: translate(25vw, 22vh) rotate(270deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+@keyframes star-drift-b {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  30%  { transform: translate(-25vw, 15vh) rotate(-120deg); }
+  60%  { transform: translate(-45vw, -10vh) rotate(-240deg); }
+  100% { transform: translate(0, 0) rotate(-360deg); }
+}
+@keyframes star-drift-c {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  35%  { transform: translate(20vw, -18vh) rotate(140deg); }
+  70%  { transform: translate(-15vw, 12vh) rotate(260deg); }
+  100% { transform: translate(0, 0) rotate(360deg); }
+}
+/* Twinkle: subtle opacity pulse, layered on the same element as the drift.
+   Different properties (opacity vs transform), so the two animations don't conflict. */
+@keyframes star-twinkle {
+  0%, 100% { opacity: 0.2; }
+  50%      { opacity: 0.5; }
+}
+
+/* --- Large overlapping outline rings (hero only) ------ */
+/* Big, faint, organic-feeling stroke-only ellipses that overlap near the center
+   of the hero and drift slowly into and out of each other, behind all content
+   (z-index 0). Faint wine tone via currentColor so they never fight the text. */
+.r-hero-rings {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+  color: var(--decorative-line); /* faint wine; raise alpha if too invisible */
+}
+.r-ring {
+  position: absolute;
+  opacity: 0.45;
+  will-change: transform;
+}
+/* Two big rings overlapping near center (one higher-left, one lower-right),
+   one medium ring top-right, one large ring bottom-left. Physical left/right
+   so HE and EN look identical. */
+.r-ring--1 { width: 520px; height: 520px; top: 4%;  left: 50%; margin-left: -300px; }
+.r-ring--2 { width: 560px; height: 560px; top: 14%; left: 50%; margin-left: -220px; }
+/* Side rings sit closer to center; their drift carries them INTO the center
+   zone where they overlap each other (and the big rings), then back out. */
+.r-ring--3 { width: 260px; height: 260px; top: 8%;  right: 18%; }
+.r-ring--4 { width: 380px; height: 380px; bottom: 2%; left: 16%; }
+
+/* Intersecting drift: rings ease toward and away from each other. Durations are
+   close-but-unequal so the side rings meet at a slightly different spot each
+   cycle, giving organic "collisions" near the center. */
+.r-ring--1 { animation: ring-drift-1 26s ease-in-out infinite; }
+.r-ring--2 { animation: ring-drift-2 23s ease-in-out infinite; }
+.r-ring--3 { animation: ring-drift-3 21s ease-in-out infinite; }
+.r-ring--4 { animation: ring-drift-4 24s ease-in-out infinite; }
+
+@keyframes ring-drift-1 {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  50%  { transform: translate(4vw, 3vh) rotate(6deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+@keyframes ring-drift-2 {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  50%  { transform: translate(-4vw, -2vh) rotate(-7deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+/* Top-right ring dives down-left into the center. */
+@keyframes ring-drift-3 {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  50%  { transform: translate(-12vw, 18vh) rotate(15deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+/* Bottom-left ring rises up-right into the center to meet ring 3. */
+@keyframes ring-drift-4 {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  50%  { transform: translate(12vw, -16vh) rotate(-12deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
 
 /* --- Hero --------------------------------------------- */
 .r-hero {
@@ -418,7 +516,15 @@ ul {
   isolation: isolate;
 }
 .r-hero > * { position: relative; z-index: 1; }
-.r-hero > .r-bg-circles { z-index: 0; }
+/* The `> *` rule above also matches the star layers and would force them to
+   position: relative (equal specificity, later in source = wins), collapsing them
+   to zero height so overflow: hidden clips every star. Re-assert absolute here. */
+.r-hero > .r-bg-stars,
+.r-hero > .r-hero-rings {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
 .r-hero__agency {
   position: absolute;
   top: clamp(1rem, 3vw, 1.5rem);
@@ -456,7 +562,7 @@ ul {
   text-transform: uppercase;
   letter-spacing: 0.18em;
   color: var(--color-text-muted-dark);
-  font-size: var(--font-size-sm);
+  font-size: 1rem;
   margin-bottom: var(--space-2xl);
 }
 .r-hero__photo { max-width: 400px; margin-inline: auto; }
@@ -501,20 +607,54 @@ ul {
 .r-reel__title {
   text-transform: uppercase;
   letter-spacing: 0.3em;
-  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-xl);
 }
 .r-reel .r-placeholder { max-width: 900px; margin-inline: auto; }
 
+/* Dual demo reel layout: two video boxes side by side, stacked on mobile */
+.demo-reel-grid {
+  display: flex;
+  gap: 2rem;
+  max-width: 1400px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+.demo-reel-item {
+  flex: 1;
+  min-width: 0;           /* prevents flex overflow on narrow screens */
+  margin: 0;
+}
+.demo-reel-item figcaption {
+  text-align: center;
+  margin-block-end: 0.6rem;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: var(--color-gold-soft);
+}
+@media (max-width: 767px) {
+  .demo-reel-grid { flex-direction: column; }
+}
+
 /* --- Tabs section (cream) ----------------------------- */
 .r-tabs {
   position: relative;
-  background: var(--color-bg-cream);
+  background-color: var(--color-bg-cream);
   padding: clamp(3rem, 8vw, 6rem) var(--container-padding);
   isolation: isolate;
 }
-.r-tabs > .r-bg-circles { z-index: 0; }
+
+/* Faint cinema-icon watermark (video camera, clapperboard, film reel, stage
+   light) tiled behind the tabs/education section only. Inline data-URI SVG,
+   stroke-only wine at very low alpha so it reads as an almost subliminal
+   watermark and never competes with the text. The 420x420 viewBox tile scatters
+   the four icons so it does not look grid-like; background-size shrinks it. */
+.r-tabs {
+  background-image: url("data:image/svg+xml,<svg%20xmlns='http://www.w3.org/2000/svg'%20width='420'%20height='420'%20viewBox='0%200%20420%20420'%20fill='none'%20stroke='rgba(114,47,55,0.035)'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'><rect%20x='40'%20y='62'%20width='80'%20height='52'%20rx='8'/><circle%20cx='70'%20cy='88'%20r='9'/><polygon%20points='120,74%20146,62%20146,114%20120,102'/><rect%20x='250'%20y='112'%20width='92'%20height='58'%20rx='4'/><rect%20x='250'%20y='96'%20width='92'%20height='16'/><line%20x1='262'%20y1='96'%20x2='256'%20y2='112'/><line%20x1='284'%20y1='96'%20x2='278'%20y2='112'/><line%20x1='306'%20y1='96'%20x2='300'%20y2='112'/><line%20x1='328'%20y1='96'%20x2='322'%20y2='112'/><circle%20cx='110'%20cy='320'%20r='48'/><circle%20cx='110'%20cy='320'%20r='10'/><circle%20cx='138'%20cy='320'%20r='7'/><circle%20cx='124'%20cy='344'%20r='7'/><circle%20cx='96'%20cy='344'%20r='7'/><circle%20cx='82'%20cy='320'%20r='7'/><circle%20cx='96'%20cy='296'%20r='7'/><circle%20cx='124'%20cy='296'%20r='7'/><circle%20cx='312'%20cy='288'%20r='26'/><line%20x1='312'%20y1='314'%20x2='292'%20y2='374'/><line%20x1='312'%20y1='314'%20x2='332'%20y2='374'/><line%20x1='312'%20y1='314'%20x2='312'%20y2='374'/><line%20x1='286'%20y1='376'%20x2='338'%20y2='376'/></svg>");
+  background-size: 300px 300px;
+  background-repeat: repeat;
+}
 .r-tabs > .r-tabs__list,
 .r-tabs > .r-tabs__panels { position: relative; z-index: 1; }
 
@@ -535,6 +675,7 @@ ul {
 }
 .r-tabs__label {
   cursor: pointer;
+  font-size: 1.0625rem;
   padding: var(--space-sm) var(--space-md);
   min-height: 48px;
   display: inline-flex;
@@ -548,22 +689,24 @@ ul {
 }
 .r-tabs__label:hover { color: var(--color-text-dark); }
 
-.r-tabs__panel { display: none; opacity: 0; transition: opacity var(--transition-normal); }
+/* Only the active panel renders, so the section height tracks it (no empty gap). */
+.r-tabs__panels { display: block; }
+.r-tabs__panel { display: none; }
 #r-tab-1:checked ~ .r-tabs__panels #r-tab-panel-1,
 #r-tab-2:checked ~ .r-tabs__panels #r-tab-panel-2,
 #r-tab-3:checked ~ .r-tabs__panels #r-tab-panel-3,
-#r-tab-4:checked ~ .r-tabs__panels #r-tab-panel-4,
-#r-tab-5:checked ~ .r-tabs__panels #r-tab-panel-5,
-#r-tab-6:checked ~ .r-tabs__panels #r-tab-panel-6 {
+#r-tab-4:checked ~ .r-tabs__panels #r-tab-panel-4 {
   display: block;
-  opacity: 1;
+  animation: r-panel-in 320ms ease;
+}
+@keyframes r-panel-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
 #r-tab-1:checked ~ .r-tabs__list label[for="r-tab-1"],
 #r-tab-2:checked ~ .r-tabs__list label[for="r-tab-2"],
 #r-tab-3:checked ~ .r-tabs__list label[for="r-tab-3"],
-#r-tab-4:checked ~ .r-tabs__list label[for="r-tab-4"],
-#r-tab-5:checked ~ .r-tabs__list label[for="r-tab-5"],
-#r-tab-6:checked ~ .r-tabs__list label[for="r-tab-6"] {
+#r-tab-4:checked ~ .r-tabs__list label[for="r-tab-4"] {
   color: var(--color-text-dark);
   border-bottom-color: var(--color-gold-soft);
 }
@@ -580,9 +723,7 @@ ul {
 #r-tab-1:focus-visible ~ .r-tabs__list label[for="r-tab-1"],
 #r-tab-2:focus-visible ~ .r-tabs__list label[for="r-tab-2"],
 #r-tab-3:focus-visible ~ .r-tabs__list label[for="r-tab-3"],
-#r-tab-4:focus-visible ~ .r-tabs__list label[for="r-tab-4"],
-#r-tab-5:focus-visible ~ .r-tabs__list label[for="r-tab-5"],
-#r-tab-6:focus-visible ~ .r-tabs__list label[for="r-tab-6"] {
+#r-tab-4:focus-visible ~ .r-tabs__list label[for="r-tab-4"] {
   outline: 2px solid var(--color-gold-soft);
   outline-offset: 4px;
   border-radius: 4px;
@@ -592,7 +733,7 @@ ul {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.18em;
-  font-size: var(--font-size-xl);
+  font-size: clamp(1.75rem, 4vw, 2rem);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-xl);
   color: var(--color-text-dark);
@@ -602,9 +743,52 @@ ul {
   border-inline-start: 3px solid var(--color-gold-soft);
   padding-inline-start: var(--space-lg);
 }
-.r-timeline__title { font-weight: var(--font-weight-bold); color: var(--color-text-dark); margin-bottom: var(--space-xs); }
-.r-timeline__meta { color: var(--color-text-muted-dark); font-size: var(--font-size-sm); }
+.r-timeline__title { font-weight: var(--font-weight-bold); color: var(--color-text-dark); margin-bottom: var(--space-xs); font-size: 1.2rem; }
+.r-timeline__meta { color: var(--color-text-muted-dark); font-size: 1.05rem; }
 .r-timeline__meta .year { color: var(--color-gold-soft); font-weight: var(--font-weight-medium); }
+
+/* Stacked detail lines inside a timeline entry need a little breathing room */
+.r-timeline__meta + .r-timeline__meta { margin-top: var(--space-xs); }
+
+/* Contact rows: gold icon + link, logical flow (icon leads, RTL-safe) */
+.r-contact-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: 44px;
+  font-size: 1.05rem;
+  color: var(--color-text-dark);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+.r-contact-row:hover,
+.r-contact-row:focus-visible { color: var(--color-gold-soft); }
+.r-contact-row__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  color: var(--color-gold-soft); /* icon stays gold via currentColor, even on row hover */
+}
+
+/* Small muted indented sub-line under an experience entry */
+.r-exp-detail {
+  font-size: 0.95rem;
+  color: var(--color-text-muted-dark);
+  padding-inline-start: var(--space-md); /* logical indent, RTL-safe */
+  margin-top: 2px;
+}
+/* Extra gap before the next role line so entries read as distinct */
+.r-exp-detail + .r-timeline__meta { margin-top: var(--space-md); }
+
+/* Skill chips (Additional Skills block in Personal Details) */
+.r-skills-row { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+.r-skill-pill {
+  font-size: 0.95rem;
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  background: rgba(201, 162, 74, 0.15); /* soft gold tint */
+  color: var(--color-text-dark);
+}
 
 /* --- Updates ticker ----------------------------------- */
 .r-ticker {
@@ -626,37 +810,50 @@ ul {
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  font-size: var(--font-size-sm);
+  font-size: 0.95rem;
 }
-.r-ticker__track { flex: 1; overflow: hidden; }
+.r-ticker__track {
+  flex: 1;
+  overflow: hidden;
+  direction: ltr; /* anchor the scrolling text to the LEFT edge on both RTL and LTR pages */
+}
 .r-ticker__text {
-  display: inline-block;
-  white-space: nowrap;
-  color: var(--color-text-dark);
-  font-size: var(--font-size-sm);
+  display: flex;
+  width: max-content;
+  gap: 2rem;             /* small gap between the two copies = seam gap */
+  direction: ltr;        /* keep the two copies ordered L->R on both pages */
   animation: r-ticker-scroll var(--r-ticker-duration) linear infinite;
 }
+.r-ticker__copy {
+  white-space: nowrap;
+  color: var(--color-text-dark);
+  font-size: 1rem;
+}
 .r-ticker:hover .r-ticker__text { animation-play-state: paused; }
+/* Rightward (left-to-right) seamless scroll. Track = [copy1][2rem gap][copy2];
+   starting one copy+gap to the left puts copy2 at origin, ending at 0 puts the
+   identical copy1 at origin -> no visible jump, never empty.
+   calc(-50% - 1rem) is exact: -50% of the track is one copy + half the gap,
+   minus the remaining half-gap (1rem) = exactly one copy + full gap. */
 @keyframes r-ticker-scroll {
-  0%   { transform: translateX(-100%); }
-  100% { transform: translateX(100%); }
+  from { transform: translateX(calc(-50% - 1rem)); }
+  to   { transform: translateX(0); }
 }
 
 /* --- Gallery ------------------------------------------ */
 .r-gallery {
   position: relative;
-  background: var(--color-bg-cream);
+  background-color: var(--color-bg-cream);
   padding: clamp(3rem, 8vw, 6rem) var(--container-padding);
   isolation: isolate;
 }
-.r-gallery > .r-bg-circles { z-index: 0; }
 .r-gallery > .r-gallery__title,
 .r-gallery > .r-gallery__grid { position: relative; z-index: 1; }
 .r-gallery__title {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.3em;
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-2xl);
   color: var(--color-text-dark);
@@ -683,7 +880,7 @@ ul {
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 0.3em;
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-2xl);
 }
@@ -726,7 +923,7 @@ ul {
 .r-connect__title {
   text-transform: uppercase;
   letter-spacing: 0.3em;
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-size: clamp(1.75rem, 4.5vw, 2.5rem);
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-md);
   color: var(--color-text-dark);
@@ -825,9 +1022,9 @@ ul {
 /* --- Mobile tightening -------------------------------- */
 @media (max-width: 480px) {
   .r-hero__name { letter-spacing: 0.02em; font-size: clamp(2rem, 11vw, 3rem); }
-  .r-hero__subtitle { font-size: 0.75rem; }
+  .r-hero__subtitle { font-size: 0.85rem; }
   .r-tabs__list { gap: var(--space-sm); }
-  .r-tabs__label { font-size: var(--font-size-sm); padding: var(--space-xs) var(--space-sm); }
+  .r-tabs__label { font-size: 0.95rem; padding: var(--space-xs) var(--space-sm); }
   .r-connect__btn { width: 100%; }
 
   .r-hero { padding-top: 5.5rem; }
@@ -849,6 +1046,36 @@ ul {
 
   .r-lang-switcher { font-size: 0.7rem; gap: 0.25rem; }
   .r-lang-switcher a { padding: 0.25rem 0.35rem; min-width: 28px; min-height: 28px; }
+
+  /* Scale the large rings down so they don't dominate small screens.
+     Big rings stay centered (margin = half of each new width). */
+  .r-ring--1 { width: 300px; height: 300px; margin-left: -170px; }
+  .r-ring--2 { width: 330px; height: 330px; margin-left: -130px; }
+  .r-ring--3 { width: 150px; height: 150px; }
+  .r-ring--4 { width: 200px; height: 200px; }
+
+  /* Halve the drift distances so the rings stay mostly on screen while still
+     overlapping. Same keyframe names override the desktop versions here. */
+  @keyframes ring-drift-1 {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    50%  { transform: translate(2vw, 1.5vh) rotate(6deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+  @keyframes ring-drift-2 {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    50%  { transform: translate(-2vw, -1vh) rotate(-7deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+  @keyframes ring-drift-3 {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    50%  { transform: translate(-6vw, 9vh) rotate(15deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
+  @keyframes ring-drift-4 {
+    0%   { transform: translate(0, 0) rotate(0deg); }
+    50%  { transform: translate(6vw, -8vh) rotate(-12deg); }
+    100% { transform: translate(0, 0) rotate(0deg); }
+  }
 }
 
 @media (max-width: 360px) {
@@ -919,9 +1146,11 @@ ul {
     transform: none;
   }
 
-  .r-bg-circles > span { animation: none !important; }
+  .r-star { animation: none !important; }
+  .r-ring { animation: none !important; }
   .r-ticker__text { animation: none !important; transform: none !important; }
   .r-gallery__item:hover { transform: none; }
+  .r-tabs__panel { animation: none !important; }
 }
 
 /* Backdrop-filter fallback */
