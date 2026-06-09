@@ -549,6 +549,7 @@ ul {
   align-items: center;
   gap: clamp(0.5rem, 2vw, 1rem);
   flex-wrap: nowrap;
+  direction: ltr;   /* lock visual order so page RTL/LTR does not mirror the group */
 }
 .r-hero__name {
   font-size: clamp(2.5rem, 9vw, 5.5rem);
@@ -949,7 +950,8 @@ ul {
   margin-bottom: var(--space-lg);
 }
 .r-connect__btn {
-  width: 280px;
+  width: auto;              /* was 280px - grow to fit the email on one line */
+  min-width: 280px;         /* keep the phone button from looking too small */
   max-width: 100%;
   display: inline-flex;
   align-items: center;
@@ -967,14 +969,20 @@ ul {
 .r-connect__btn:hover { background: var(--color-primary-light); }
 .r-connect__btn:focus-visible { outline: 2px solid var(--color-text-dark); outline-offset: 2px; }
 .r-connect__btn svg { flex-shrink: 0; width: 24px; height: 24px; }
-.r-connect__btn-text { display: flex; flex-direction: column; line-height: 1.2; }
+.r-connect__btn-text { display: flex; flex-direction: column; line-height: 1.2; min-width: 0; }
 .r-connect__btn-label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--color-gold-soft); }
-.r-connect__btn-value { font-weight: var(--font-weight-bold); }
+.r-connect__btn-value {
+  font-weight: var(--font-weight-bold);
+  overflow-wrap: anywhere;
+  font-size: 0.95rem;       /* slightly smaller so the long email fits */
+  white-space: nowrap;      /* one line now that the button can grow */
+}
 .r-connect__btn--ig {
   background: transparent;
   border: 1px solid var(--color-gold-soft);
   color: var(--color-text-dark);
   width: auto;
+  min-width: auto;          /* IG pill keeps sizing to its short handle */
   padding: var(--space-sm) var(--space-lg);
   border-radius: var(--radius-lg);
   min-height: 48px;
@@ -995,17 +1003,27 @@ ul {
   justify-content: center;
   width: 48px; height: 48px;
   border-radius: 50%;
+  overflow: hidden;                 /* clip profile image to the circle */
   background: rgba(184, 149, 106, 0.15);
   color: var(--color-gold-soft);
   font-weight: var(--font-weight-bold);
   letter-spacing: 0.05em;
   margin-bottom: var(--space-md);
 }
+.r-footer__mark-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  display: block;
+}
 .r-footer__credit-label {
   display: block;
   text-transform: uppercase;
   letter-spacing: 0.2em;
   color: var(--color-text-muted-dark);
+  opacity: 0.55;
   font-size: 0.75rem;
   margin-bottom: var(--space-xs);
 }
@@ -1017,7 +1035,7 @@ ul {
   font-weight: var(--font-weight-bold);
   margin-bottom: var(--space-md);
 }
-.r-footer__copy { color: var(--color-text-muted-dark); font-size: 0.75rem; }
+.r-footer__copy { color: var(--color-text-muted-dark); font-size: 0.75rem; direction: ltr;}
 
 /* --- Mobile tightening -------------------------------- */
 @media (max-width: 480px) {
@@ -1025,7 +1043,8 @@ ul {
   .r-hero__subtitle { font-size: 0.85rem; }
   .r-tabs__list { gap: var(--space-sm); }
   .r-tabs__label { font-size: 0.95rem; padding: var(--space-xs) var(--space-sm); }
-  .r-connect__btn { width: 100%; }
+  .r-connect__btn { width: 100%; min-width: 0; }   /* shrink below 280px on small phones */
+  .r-connect__btn-value { white-space: normal; }    /* allow the email to wrap if truly needed */
 
   .r-hero { padding-top: 5.5rem; }
 
