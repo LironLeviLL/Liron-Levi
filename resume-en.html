@@ -64,12 +64,8 @@
       <h1 id="r-hero-name" class="r-hero__name">LIRON LEVI</h1>
       <p class="r-hero__subtitle">ACTRESS</p>
 
-      <div class="r-hero__photo r-placeholder r-placeholder--photo" aria-hidden="true">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 7h3l2-2h8l2 2h3a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z"/>
-          <circle cx="12" cy="13" r="4"/>
-        </svg>
-        <span class="r-placeholder__label">PHOTO</span>
+      <div class="r-hero__photo">
+        <img class="r-hero__photo-img" src="photos/gallery_main.JPG" alt="Liron Levi">
       </div>
     </section>
 
@@ -246,29 +242,23 @@
     <section class="r-gallery" aria-labelledby="r-gallery-title">
       <h2 id="r-gallery-title" class="r-gallery__title">GALLERY</h2>
       <div class="r-gallery__grid">
-        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="r-placeholder__label">PHOTO</span>
+        <div class="r-gallery__item">
+          <img class="r-gallery__img" src="photos/gallery_1.JPG" alt="">
         </div>
-        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="r-placeholder__label">PHOTO</span>
+        <div class="r-gallery__item">
+          <img class="r-gallery__img" src="photos/gallery_2.JPG" alt="">
         </div>
-        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="r-placeholder__label">PHOTO</span>
+        <div class="r-gallery__item">
+          <img class="r-gallery__img" src="photos/gallery_3.JPG" alt="">
         </div>
-        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="r-placeholder__label">PHOTO</span>
+        <div class="r-gallery__item">
+          <img class="r-gallery__img" src="photos/gallery_4.JPG" alt="">
         </div>
-        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="r-placeholder__label">PHOTO</span>
+        <div class="r-gallery__item">
+          <img class="r-gallery__img" src="photos/gallery_5.JPG" alt="">
         </div>
-        <div class="r-gallery__item r-placeholder r-placeholder--gallery" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-          <span class="r-placeholder__label">PHOTO</span>
+        <div class="r-gallery__item">
+          <img class="r-gallery__img" src="photos/gallery_6.JPG" alt="">
         </div>
       </div>
     </section>
@@ -337,5 +327,55 @@
     </footer>
 
   </main>
+
+  <!-- Lightbox overlay (click gallery/hero photo to zoom) -->
+  <div class="r-lightbox" id="r-lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+    <button class="r-lightbox__close" id="r-lightbox-close" aria-label="Close" type="button">&times;</button>
+    <img class="r-lightbox__img" id="r-lightbox-img" src="" alt="">
+  </div>
+
+  <!-- Only JavaScript in the project: the photo lightbox. See CLAUDE.md. -->
+  <script>
+    (function () {
+      var lb = document.getElementById('r-lightbox');
+      var lbImg = document.getElementById('r-lightbox-img');
+      var lbClose = document.getElementById('r-lightbox-close');
+      if (!lb || !lbImg) return;
+
+      // All zoomable images: gallery + hero
+      var zoomables = document.querySelectorAll('.r-gallery__img, .r-hero__photo-img');
+
+      function open(src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        lb.classList.add('is-open');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        lb.classList.remove('is-open');
+        lb.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        lbImg.src = '';
+      }
+
+      zoomables.forEach(function (img) {
+        img.addEventListener('click', function () {
+          open(img.getAttribute('src'), img.getAttribute('alt'));
+        });
+      });
+
+      // Click outside image (on the backdrop) closes; clicking the image does not
+      lb.addEventListener('click', function (e) {
+        if (e.target === lb) close();
+      });
+      if (lbClose) lbClose.addEventListener('click', close);
+
+      // ESC closes
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && lb.classList.contains('is-open')) close();
+      });
+    })();
+  </script>
 </body>
 </html>
